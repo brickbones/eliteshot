@@ -1,0 +1,589 @@
+
+$red-elite: #CC0011
+$dark-gray: #4B4B4B
+$container-width: 1300px
+$anton-font: 'Anton', sans-serif
+$roboto-font: 'Roboto', sans-serif    
+
+@font-face
+  font-family: "Elite Danger"
+  src: url("../fonts/gimme-danger.ttf")
+
+@mixin headline
+    font-size: 3.4em
+    margin-bottom: 15px
+    color: #494E53
+    font-family: 'Elite Danger'
+    text-transform: uppercase
+    line-height: normal
+    font-weight: normal
+    font-style: normal
+    font-variant: normal
+    text-rendering: auto
+    -webkit-font-smoothing: antialiased
+      
+
+@mixin button
+    display: inline-block
+    margin: 35px 0
+    background: #2F3136
+    padding: 5px 35px
+    font-size: 1.7em
+    color: #fff
+    border: 4px solid #191919
+    font-family: $anton-font
+    text-decoration: none
+    transform: skewX(-10deg)
+    transition: 0.3s
+    letter-spacing: 1px
+    span
+        display: inline-block
+        transform: skewX(10deg)
+        transition: 0.3s
+    &:hover
+        transform: skewX(0deg)
+        background: #191919
+        span
+            transform: skewX(0deg)
+
+    
+
+body
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+    background: #f1f1f1
+body p
+    font-family: $roboto-font
+    font-size: 1.2em
+body a:focus
+    outline: none
+header
+    background: #000 url(../images/elite-header-bg.jpg) center / cover
+    position: relative
+    min-height: 526px
+    .top-navigation
+        width: 100%
+        display: flex
+        justify-content: space-between
+        position: relative
+        padding: 15px 35px
+        z-index: 1
+        a
+            color: #fff
+            transition: 0.3s
+            text-decoration: none
+            &:hover
+                color: $red-elite
+                text-shadow: 1px 1px 20px #000
+        .social
+            display: flex
+            padding: 0
+            li
+                color: #fff
+                display: inline-block
+                font-size: 1.6em
+                margin: 0 8px
+        .join
+            font-family: $anton-font
+            font-size: 1.5em
+
+    &:before
+        content: ''
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        background: rgba(0, 0, 0, 0.5)
+        z-index: 1
+    .logo
+        position: absolute
+        z-index: 2
+        bottom: -28px
+        left: 50%
+        transform: translateX(-50%)
+        width: 100%
+        max-width: 500px
+    .triangle-divider
+        position: absolute
+        bottom: 0
+        left: 0
+        z-index: 1
+
+.elite-container
+    max-width: $container-width
+    margin: 0 auto
+    padding: 0 25px
+    position: relative
+
+.elite-bio
+    padding: 80px 0 0
+    overflow-x: hidden
+    background: rgb(255,255,255)
+    background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 41%, rgba(193,193,193,1) 100%)
+    background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 41%, rgba(193,193,193,1) 100%)
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 41%, rgba(193,193,193,1) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#c1c1c1",GradientType=1)
+    .elite-container
+        display: flex
+        .copy
+            color: $dark-gray
+            font-family: $anton-font
+            font-size: 3em
+            width: 55%
+            padding: 0 0 160px
+            position: relative
+            b
+                color: $red-elite
+            span
+                color: black
+            span.hash
+                display: block
+                margin-top: 15px
+        .elite-headshot
+            width: 45%
+            img
+                width: 708px
+                position: absolute
+                bottom: 0
+
+.elite-video
+    background: #000 url('../images/camo.jpg') center/cover
+    border-top: 8px solid #A5A5A5
+    padding: 0 0 145px
+    position: relative
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgb(0,0,0)
+        background: -moz-linear-gradient(180deg, rgba(0,0,0,0.5578606442577031) 0%, rgba(0,0,0,0.8) 100%)
+        background: -webkit-linear-gradient(180deg, rgba(0,0,0,0.5578606442577031) 0%, rgba(0,0,0,0.8) 100%)
+        background: linear-gradient(180deg, rgba(0,0,0,0.5578606442577031) 0%, rgba(0,0,0,0.8) 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1)
+    .elite-container
+        display: flex
+        .bullets
+            position: absolute
+            bottom: -55px
+            left: -30px
+    .elite-streaming
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 65%
+        overflow: hidden
+        margin-top: -100px
+        position: relative
+        border-right: #CC0011 solid 5px
+        border-bottom: #CC0011 solid 5px
+        .black-overlay
+            position: absolute
+            background: rgba(0,0 ,0 ,0.6)
+            width: 100%
+            height: 100%
+            left: 0
+            top: 0
+        video
+            width: 100%
+        .live
+            position: absolute
+            color: #fff
+            top: 15px
+            right: 20px
+            background: red
+            font-size: 1em
+            padding: 2px 10px
+            border-radius: 6px
+            text-transform: uppercase
+            z-index: 1
+        .play-button
+            position: absolute
+            z-index: 1
+            width: 160px
+            height: 160px
+            background: transparent
+            border: none
+            cursor: pointer
+            transition: 0.5s
+            &:hover
+                cursor: pointer
+                transform: scale(1.2)
+                #target
+                    fill: red
+                    transition: 0.3s
+
+    .elite-screen
+        width: 35%
+        height: 250px
+        align-self: flex-end
+        margin-left: -35px
+        margin-bottom: -25px
+        z-index: 1
+        video
+            width: 100%
+
+
+.join-the-empire
+    background: url('../images/halftone-bg.png'), rgb(108,109,112)
+    background: url('../images/halftone-bg.png'), -moz-linear-gradient(180deg, rgba(108,109,112,1) 0%, rgba(241,241,241,1) 100%)
+    background: url('../images/halftone-bg.png'), -webkit-linear-gradient(180deg, rgba(108,109,112,1) 0%, rgba(241,241,241,1) 100%)
+    background: url('../images/halftone-bg.png'), linear-gradient(180deg, rgba(108,109,112,1) 0%, rgba(241,241,241,1) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6c6d70",endColorstr="#f1f1f1",GradientType=1)
+    background-repeat: no-repeat, repeat
+    background-position: bottom left, center
+    position: relative
+    .empire-divider
+        position: absolute
+        bottom: 0
+        left: 0
+    .elite-container
+        display: flex
+        align-items: center
+        padding: 80px 15px 150px
+    .divider-2
+        height: 104px
+        width: 100%
+        background: url(../images/divider-2.png) bottom center
+        display: block
+        left: 0
+        top: -103px
+        position: absolute
+    .copy
+        padding: 0 0 0 35px
+        h2
+            @include headline
+            text-shadow: 0px 3px 6px #6a6a6a
+            color: #fff
+        p
+            color: #fff
+            text-shadow: 0px 2px 6px #9b9b9b
+        a
+            @include button
+
+.elite-gear
+    background: #fff
+    .elite-container
+        padding: 100px 15px 80px
+        text-align: center
+    h2
+        @include headline
+        display: inline-block
+        position: relative
+        &:before
+            content: ''
+            background: url(../images/elite-logo-icon.png)
+            width: 212px
+            height: 212px
+            display: inline-block
+            position: absolute
+            left: -160px
+            top: -35px
+        &:after
+            content: ''
+            width: 100%
+            min-width: 345px
+            height: 8px
+            background: $red-elite
+            display: block
+            transform: skewX(-20deg)
+            margin: 25px auto 0
+    .gear-items
+        display: flex
+        justify-content: space-between
+        padding: 45px 0
+        .gear-item
+            &:hover
+                .buy-now
+                    background: #000
+            .buy-now
+                @include button
+                background: $red-elite
+                border: none
+                margin: 15px 0
+
+.elite-sponsors
+    background:  #f1f1f1, url('../images/eliteshot_pattern.jpg')
+    background: rgb(241,241,241), url('../images/eliteshot_pattern.jpg')
+    background: -moz-radial-gradient(circle, rgba(241,241,241,1) 0%, rgba(241,241,241,0.95) 80%), url('../images/eliteshot_pattern.jpg')
+    background: -webkit-radial-gradient(circle, rgba(241,241,241,1) 0%, rgba(241,241,241,0.95) 80%), url('../images/eliteshot_pattern.jpg')
+    background: radial-gradient(circle, rgba(241,241,241,1) 0%, rgba(241,241,241,0.95) 80%), url('../images/eliteshot_pattern.jpg')
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f1f1f1",endColorstr="#f1f1f1",GradientType=1)
+    .elite-container
+        text-align: center
+        padding: 90px 15px 10px
+    h2
+        @include headline
+        display: inline-block
+        &:after
+            content: ''
+            width: 100%
+            max-width: 345px
+            height: 8px
+            background: $red-elite
+            display: block
+            transform: skewX(-20deg)
+            margin: 25px auto 0
+    .sponsors-slider
+        margin: 75px auto
+        display: block
+        max-width: 870px
+        padding: 0 25px
+        position: relative
+        .elite-slide
+            text-align: center
+            img
+                margin: 0 auto 35px
+                max-width: 440px
+            p
+                max-width: 400px
+                margin: 0 auto
+            a
+                margin: 15px 0 0
+                display: block
+                color: #333333
+        .slick-prev, .slick-next
+            display: flex
+            align-items: center
+            justify-content: center
+        .slick-prev:before, .slick-next:before
+            color: #333
+            font-size: 100px
+            font-family: 'Font Awesome 5 Pro'
+            font-weight: 500
+            opacity: 1
+            transition: 0.3s
+        .slick-prev:before
+            content: '\f104'
+        .slick-next:before
+            content: '\f105'
+        .slick-next:hover,
+        .slick-prev:hover
+            &:before
+                color: $red-elite
+
+    .discount-codes
+        border-top: 6px #6C6D70 solid
+        border-bottom: 6px #6C6D70 solid
+        padding: 20px 0
+        text-align: center
+        position: relative
+        &::before
+            content: ''
+            width: 0
+            height: 0
+            border-left: 25px solid transparent
+            border-right: 25px solid transparent
+            border-bottom: 25px solid #6C6D70
+            position: absolute
+            top: -25px
+            left: 50%
+            transform: translateX(-50%)
+        h2
+            font-size: 1.5em
+            display: block
+            color: #2F3136
+            &:after
+                display: none
+        b
+            color: $red-elite
+
+footer
+    background: #fff
+    position: relative
+    margin-top: 250px
+    box-shadow: 0 -12px 12px rgba(0, 0, 0, 0.1)
+    padding: 0 15px 15px
+    .elite-container
+        display: flex
+        align-items: center
+        justify-content: space-between
+        &::before
+            content: ''
+            background: url(../images/footer-bullets.png)
+            height: 166px
+            width: 724px
+            position: absolute
+            top: -166px
+            right: 0
+    .social
+        display: flex
+        align-items: center
+        justify-content: space-around
+        width: 100%
+        font-size: 60px
+        a
+            transition: 0.3s
+            &:hover
+                color: $dark-gray
+    .million-empire
+        margin-top: -143px
+        position: relative
+    .youtube
+        color: #FF0000
+    .snapchat
+        color: #CBBD13
+    .twitter
+        color: #1DA1F2
+    .facebook
+        color: #1877F2
+    .instagram
+        color: #C32AA3
+    .twitch
+        color: #6441A5
+
+@media screen and ( max-width: 768px )
+    header
+        min-height: auto
+        .top-navigation
+            flex-direction: column
+            .social, .join
+                justify-content: center
+                text-align: center
+        .logo
+            position: relative
+    
+    .elite-bio
+        .elite-container
+            flex-direction: column
+            .copy
+                width: 100%
+                font-size: 1.6em
+                padding: 0 0 15px
+            .elite-headshot
+                width: 100%
+                img
+                    position: relative
+
+    .elite-video
+        padding: 0 0 115px
+        .elite-container
+            flex-direction: column
+            .elite-streaming
+                width: 100%
+                margin-top: -1em
+                .play-button
+                    width: 100px
+                    height: 100px
+            .elite-screen
+                width: 80%
+                margin: -1em -1em 0
+                height: auto
+            .bullets
+                z-index: 1
+                width: 40%
+                bottom: -25px
+                left: 25px
+
+    .join-the-empire
+        background: url('../images/halftone-bg.png'), rgb(108,109,112)
+        background: url('../images/halftone-bg.png'), -moz-linear-gradient(180deg, rgba(108,109,112,1) 60%, rgba(241,241,241,1) 100%)
+        background: url('../images/halftone-bg.png'), -webkit-linear-gradient(180deg, rgba(108,109,112,1) 60%, rgba(241,241,241,1) 100%)
+        background: url('../images/halftone-bg.png'), linear-gradient(180deg, rgba(108,109,112,1) 60%, rgba(241,241,241,1) 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6c6d70",endColorstr="#f1f1f1",GradientType=1)
+        .elite-container
+            flex-direction: column
+            padding: 50px 0
+            img
+                max-width: 80%
+            .copy
+                padding: 0
+                text-align: center
+                h2
+                    text-align: center
+                    font-size: 2em
+                    margin-top: 15px
+        .divider-2
+            z-index: 1
+
+    .elite-gear
+        .elite-container
+            padding: 50px 15px
+        h2
+            font-size: 2em
+            text-align: center
+            display: block
+            &:before
+                position: relative
+                left: 50%
+                top: 0
+                transform: translateX(-50%)
+                width: 180px
+                height: 180px
+                background-size: 180px
+                display: block
+        .gear-items
+            flex-direction: column
+            padding: 15px 0
+            .gear-item
+                margin-bottom: 15px
+                img
+                    margin: 0 auto
+
+    .elite-sponsors
+        h2
+            font-size: 2em
+        .slick-next
+            right: 0
+        .slick-prev
+            left: 0
+        .sponsors-slider
+            padding: 0 35px
+            margin: 50px 0
+            .elite-slide
+                img
+                    width: 100%
+            .slick-prev, .slick-next
+                display: flex
+                align-items: center
+                justify-content: center
+            .slick-prev:before, .slick-next:before
+                color: #333
+                font-size: 50px
+                font-family: 'Font Awesome 5 Pro'
+                font-weight: 500
+                opacity: 1
+                transition: 0.3s
+
+    footer
+        margin-top: 200px
+        padding: 0
+        img.million-empire
+            padding: 0 25px
+        .elite-container
+            flex-direction: column
+            padding: 0
+            &:before
+                left: 0
+                width: 100%
+        .social
+            font-size: 35px
+            padding: 15px 25px 35px
+
+#video-modal
+    display: flex
+    align-items: center
+    justify-content: center
+    .close-video-modal
+        position: absolute
+        top: 0
+        right: 0
+        z-index: 2
+        color: #fff
+        padding: 15px
+        font-family: 'Elite Danger'
+        cursor: pointer
+        background: $red-elite
+        transition: 0.3s
+        &:hover
+            background: #333
+    video
+        width: 90%
+        height: auto
+        display: block
+        margin: 0 auto
+        z-index: 1
+
+    
